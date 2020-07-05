@@ -3,9 +3,7 @@ pipeline {
 	stages {
 		stage ('Compile Stage') {
 			steps {
-					withMaven(maven : 'default') {
-					bat'mvn clean compile'
-					}
+					sh 'mvn -Dmaven.test.failure.ignore=true clean install' 
 			}
 		}
 		stage ('Testing Stage') {
