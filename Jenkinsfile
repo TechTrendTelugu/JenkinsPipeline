@@ -9,7 +9,7 @@ pipeline {
 	stages {
 		stage ('Compile Stage') {
 			steps {
-					sh 'mvn -Dmaven.test.failure.ignore=true clean install' 
+					bat 'mvn -Dmaven.test.failure.ignore=true clean install' 
 			}
 		}
 		
