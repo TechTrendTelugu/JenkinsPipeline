@@ -23,8 +23,9 @@ pipeline {
 		
 		stage ('sonarqube7.1') {
 			steps {
-					withSonarQubeEnv('sonarqube7.1')
-					bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
+					withSonarQubeEnv('sonarqube7.1'){
+						bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
+					}
 			}
 		}
 		
