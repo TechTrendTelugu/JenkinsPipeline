@@ -35,12 +35,26 @@ pipeline {
     		}
     	}
     	
-    	stage('Push the Docker Image'){
+    	stage('Start the Docker Image'){
+    	   steps{
+ 
+    		    bat 'mvn docker:start'
+    		}           
+       }
+       
+       stage('Stop the Docker Image'){
+    	   steps{
+ 
+    		    bat 'mvn docker:stop'
+    		}           
+       }
+       
+      stage('Push the Docker Image'){
     	   steps{
  
     		    bat 'mvn docker:build'
     		}           
-      }
+       }
 		
 	}
 }
