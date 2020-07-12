@@ -25,10 +25,20 @@ pipeline {
 			steps {
 					withSonarQubeEnv('sonarqube7.1'){
 						bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
-					}
+				    }
 			}
 		}
 		
+		stage('Build Docker image'){
+		                 
+			bat 'mvn docker:build'                
+		}
+		
+		stage('Build Docker image'){
+		                 
+			bat 'mvn docker:push'                
+		}
+
 		
 	}
 }
