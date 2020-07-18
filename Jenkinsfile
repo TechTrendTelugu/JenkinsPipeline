@@ -29,6 +29,13 @@ pipeline {
 			}
 		}
 		
+		stage('Push the Docker Image'){
+    	   steps{
+ 
+    		    bat 'mvn docker:build'
+    		}           
+       }
+		
 		stage('Build Docker image'){
 		   steps{
         		bat 'mvn docker:push'
@@ -49,12 +56,7 @@ pipeline {
     		}           
        }
        
-      stage('Push the Docker Image'){
-    	   steps{
- 
-    		    bat 'mvn docker:build'
-    		}           
-       }
+      
 		
 	}
 }
