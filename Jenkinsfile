@@ -21,13 +21,13 @@ pipeline {
 			}
 		}
 		
-		stage ('sonarqube7.1') {
+		/*stage ('sonarqube7.1') {
 			steps {
 					withSonarQubeEnv('sonarqube7.1'){
 						bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
 				    }
 			}
-		}
+		}*/
 		
 		stage('Push the Docker Image'){
     	   steps{
